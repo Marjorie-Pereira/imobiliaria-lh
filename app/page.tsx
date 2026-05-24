@@ -1,8 +1,22 @@
+import { Button } from "@/components/ui/button";
+import {
+  Select,
+  SelectTrigger,
+  SelectValue,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+} from "@/components/ui/select";
+import { Search } from "lucide-react";
 import Image from "next/image";
+import { SearchProperty } from "./components/searchProperty";
 
 export default function Home() {
   return (
-    <section className="h-screen flex items-center text-white bg-center bg-cover bg-blend-overlay bg-black/50" style={{backgroundImage: `url(capaodacanoa.jpeg)` }}>
+    <section
+      className="h-screen flex items-center text-white bg-center bg-cover bg-blend-overlay bg-black/50"
+      style={{ backgroundImage: `url(capaodacanoa.jpeg)` }}
+    >
       <div className="text-center mx-auto">
         {/* <Image
           src="/capaodacanoa.jpeg"
@@ -16,9 +30,7 @@ export default function Home() {
         <p className="text-2xl my-8">
           As melhores oportunidades do mercado imobiliário
         </p>
-        <div className="h-5 bg-slate-300">
-          <p>buscar...</p>
-        </div>
+        <SearchProperty />
       </div>
     </section>
   );
