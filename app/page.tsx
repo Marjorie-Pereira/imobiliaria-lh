@@ -11,6 +11,7 @@ import { Search } from "lucide-react";
 import Image from "next/image";
 import { SearchProperty } from "./components/searchProperty";
 import PropertyCard from "./components/propertyCard";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -42,15 +43,19 @@ export default function Home() {
         <p className="text-xl my-6 text-slate-600">
           Selecionamos as melhores oportunidades para você
         </p>
-        <div className="flex flex-wrap gap-8 justify-center">
-          
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <PropertyCard bathrooms={3} bedrooms={3} image="/casademo.jpeg" location="Capão da Canoa, RS" title="Casa linda" price={500000} type="venda" area={200}  />
+          <PropertyCard bathrooms={3} bedrooms={3} image="/casademo.jpeg" location="Capão da Canoa, RS" title="Casa linda" price={500000} type="aluguel" area={200}  />
+          <PropertyCard bathrooms={3} bedrooms={3} image="/casademo.jpeg" location="Capão da Canoa, RS" title="Casa linda" price={500000} type="venda" area={200}  />
+          <PropertyCard bathrooms={3} bedrooms={3} image="/casademo.jpeg" location="Capão da Canoa, RS" title="Casa linda" price={500000} type="venda" area={200}  />
         </div>
         <div className="pt-10">
           <Button
             variant={"outline"}
             className="py-4 px-6 border-blue-500 text-blue-500"
           >
-            VER TODOS OS IMÓVEIS
+            <Link href={'/imoveis'}>VER TODOS OS IMÓVEIS</Link>
+            
           </Button>
         </div>
       </section>
