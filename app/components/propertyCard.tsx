@@ -5,10 +5,12 @@ import { Bath } from "lucide-react";
 import { Square } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ChevronRight } from 'lucide-react';
+import { Badge } from "@/components/ui/badge";
+import { Heart } from "lucide-react";
 
 
 type PropertyCardProps = {
-  className: string | undefined;
+  className?: string | undefined;
   title: string;
   location: string;
   bedrooms: number;
@@ -34,8 +36,10 @@ export default function PropertyCard({
   style: 'currency',
   currency: 'BRL',
 });
+  const badgeColor = type == 'venda' ? 'bg-blue-500' : 'bg-green-500'
   return (
-    <div className={`text-start min-w-[30%] h-110 rounded-md  shadow-xl  ${className}`}>
+    <div className={`max-w-100 text-start min-w-[30%] h-110 rounded-md  shadow-xl   ${className}`}>
+     
       <div className="relative w-full h-1/2 overflow-hidden rounded-t-md ">
         <Image
           alt="property cover"
@@ -44,6 +48,8 @@ export default function PropertyCard({
           objectFit="cover"
           className="w-full h-full"
         />
+         <Badge className={`${badgeColor} absolute top-4 left-4`} >{type.toUpperCase()}</Badge>
+         <Button variant={'secondary'} className="absolute rounded-full right-4 top-4 p-2 w-10 h-10"><Heart className="w-10 h-10 size-6!"/></Button>
       </div>
       {/* bottom */}
       <div className="m-6 text-start border-b border-slate-300 pb-4">
