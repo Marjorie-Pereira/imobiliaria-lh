@@ -1,18 +1,10 @@
 import { Button } from "@/components/ui/button";
-import {
-  Select,
-  SelectTrigger,
-  SelectValue,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-} from "@/components/ui/select";
-import { Building, House, MapPin, Search } from "lucide-react";
-import Image from "next/image";
+import { Building, House, Mail, MapPin, Phone } from "lucide-react";
 import { SearchProperty } from "./components/searchProperty";
 import PropertyCard from "./components/propertyCard";
 import Link from "next/link";
 import ServiceCard from "./components/serviceCard";
+import { properties } from "@/lib/placeholder-data";
 
 export default function Home() {
   return (
@@ -45,46 +37,31 @@ export default function Home() {
           Selecionamos as melhores oportunidades para você
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <PropertyCard
-            bathrooms={3}
-            bedrooms={3}
-            image="/casademo.jpeg"
-            location="Capão da Canoa, RS"
-            title="Casa linda"
-            price={500000}
-            type="venda"
-            area={200}
-          />
-          <PropertyCard
-            bathrooms={3}
-            bedrooms={3}
-            image="/casademo.jpeg"
-            location="Capão da Canoa, RS"
-            title="Casa linda"
-            price={500000}
-            type="aluguel"
-            area={200}
-          />
-          <PropertyCard
-            bathrooms={3}
-            bedrooms={3}
-            image="/casademo.jpeg"
-            location="Capão da Canoa, RS"
-            title="Casa linda"
-            price={500000}
-            type="venda"
-            area={200}
-          />
-          <PropertyCard
-            bathrooms={3}
-            bedrooms={3}
-            image="/casademo.jpeg"
-            location="Capão da Canoa, RS"
-            title="Casa linda"
-            price={500000}
-            type="venda"
-            area={200}
-          />
+          {properties.map(
+            ({
+              title,
+              bathrooms,
+              bedrooms,
+              id,
+              location,
+              area,
+              image,
+              price,
+              type,
+            }) => (
+              <PropertyCard
+                title={title}
+                bathrooms={bathrooms}
+                bedrooms={bedrooms}
+                key={id}
+                location={location}
+                area={area}
+                image={image}
+                price={price}
+                type={type}
+              />
+            ),
+          )}
         </div>
         <div className="pt-10">
           <Button
@@ -96,7 +73,7 @@ export default function Home() {
         </div>
       </section>
       {/* serviços */}
-      <section className="mx-auto py-18 px-8 text-center bg-slate-100 h-screen">
+      <section className="mx-auto py-18 px-8 text-center bg-slate-100 min-h-fit">
         <h2 className="text-3xl font-semibold mb-0">Nossos Serviços</h2>
         <p className="text-xl mt-4 mb-10 text-slate-600">
           Soluções completas para suas necessidades imobiliárias
@@ -117,6 +94,23 @@ export default function Home() {
             title="Consultoria"
             description="Orientação especializada em investimentos imobiliários"
           />
+        </div>
+      </section>
+      {/* call to action */}
+      <section className="bg-blue-500 text-white text-center p-10 pb-20 min-h-fit h-full">
+        <h2 className="text-3xl font-semibold">Pronto para Encontrar Seu Próximo Imóvel?</h2>
+        <p className="text-xl my-6 ">
+          Entre em contato com nossos especialistas e realize o seu sonho
+        </p>
+        <div >
+          <Button className="bg-blue-700 hover:bg-blue-800 p-5 shadow-md mx-2">
+            <Phone /> 
+            <p>(51) 3621-1690</p>
+          </Button>
+           <Button className="bg-blue-700 hover:bg-blue-800 p-5 shadow-md mx-2">
+            <Mail />
+            <p>ENVIAR MENSAGEM</p>
+          </Button>
         </div>
       </section>
     </main>
