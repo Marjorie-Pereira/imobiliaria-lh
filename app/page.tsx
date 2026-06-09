@@ -27,7 +27,7 @@ export default function Home() {
           <p className="text-2xl my-8">
             As melhores oportunidades do mercado imobiliário
           </p>
-          {/* <SearchProperty /> */}
+          <SearchProperty />
         </div>
       </section>
       {/* popular */}
