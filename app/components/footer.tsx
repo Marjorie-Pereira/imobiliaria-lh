@@ -31,12 +31,12 @@ export const Footer = () => {
         </div>
         <div className="w-1/4">
           <h1 className="text-lg font-semibold mb-6">Contato</h1>
-          <div className="text-slate-300">
-            <p>(51) 3621-1690</p>
-            <p>(51) 98109-3047 - WhatsApp</p>
-            <p>atendimento@luizhenriqueimoveis.com.br</p>
-            <p>@luizhenriqueimob</p>
-          </div>
+          <ul className="text-slate-300">
+            <li>(51) 3621-1690</li>
+            <li>(51) 98109-3047 - WhatsApp</li>
+            <li className="wrap-break-word">atendimento@luizhenriqueimoveis.com.br</li>
+            <li>@luizhenriqueimob</li>
+          </ul>
         </div>
         <div className="w-1/4">
           <h1 className="text-lg font-semibold mb-6">Horário de Atendimento</h1>
