@@ -13,9 +13,9 @@ import Link from "next/link";
 import { Heart } from "lucide-react";
 export const Header = () => {
   return (
-    <header className="py-2 px-10 border-b-2 border-blue-950 flex items-center justify-between ">
+    <header className="py-2 px-10 flex items-center justify-between fixed top-0 right-0 left-0 z-10 h-20 bg-white/90 backdrop-blur-md">
       <Image src="/lhimoveis.png" alt="Logo" width={150} height={50} />
-      <NavigationMenu>
+      <NavigationMenu className="hidden md:block">
         <NavigationMenuList>
           <NavigationMenuItem>
             <NavigationMenuTrigger className="text-md font-normal">

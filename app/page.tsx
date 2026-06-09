@@ -8,10 +8,10 @@ import { properties } from "@/lib/placeholder-data";
 
 export default function Home() {
   return (
-    <main>
+    <main className="pt-20">
       {/* hero */}
       <section
-        className="h-screen flex items-center text-white bg-center bg-cover bg-blend-overlay bg-black/50"
+        className="h-screen max-w-screen flex items-center text-white bg-center bg-cover bg-blend-overlay bg-black/50"
         style={{ backgroundImage: `url(capaodacanoa.jpeg)` }}
       >
         <div className="text-center mx-auto">
@@ -27,7 +27,7 @@ export default function Home() {
           <p className="text-2xl my-8">
             As melhores oportunidades do mercado imobiliário
           </p>
-          <SearchProperty />
+          {/* <SearchProperty /> */}
         </div>
       </section>
       {/* popular */}
@@ -78,7 +78,7 @@ export default function Home() {
         <p className="text-xl mt-4 mb-10 text-slate-600">
           Soluções completas para suas necessidades imobiliárias
         </p>
-        <div className="flex justify-center gap-8">
+        <div className="flex justify-center gap-8 flex-wrap">
           <ServiceCard
             Icon={House}
             title="Compra e Venda"

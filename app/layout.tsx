@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={openSans.className}>
-      <body className="min-h-full flex flex-col ">
+      <body className="min-h-full flex flex-col relative">
         <Header />
 
         {children}
