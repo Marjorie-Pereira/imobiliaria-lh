@@ -23,7 +23,10 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col relative">
         <Header />
 
-        {children}
+        <div className="pt-20">
+          {children}
+        </div>
+        
 
         <Footer />
       </body>
