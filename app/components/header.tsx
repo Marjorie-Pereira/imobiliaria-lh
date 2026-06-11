@@ -14,7 +14,10 @@ import { Heart } from "lucide-react";
 export const Header = () => {
   return (
     <header className="py-2 px-10 flex items-center justify-between fixed top-0 right-0 left-0 z-10 h-20 bg-white/90 backdrop-blur-md">
-      <Image src="/lhimoveis.png" alt="Logo" width={150} height={50} />
+     <Link href={'/'}>
+     <Image src="/lhimoveis.png" alt="Logo" width={150} height={50} />
+     </Link>
+      
       <NavigationMenu className="hidden md:block">
         <NavigationMenuList>
           <NavigationMenuItem>
@@ -74,6 +77,14 @@ export const Header = () => {
               className={navigationMenuTriggerStyle() + " text-md font-normal"}
             >
               <Link href="/docs">Sobre Nós</Link>
+            </NavigationMenuLink>
+          </NavigationMenuItem>
+          <NavigationMenuItem>
+            <NavigationMenuLink
+              asChild
+              className={navigationMenuTriggerStyle() + " text-md font-normal"}
+            >
+              <Link href="/contato">Contato</Link>
             </NavigationMenuLink>
           </NavigationMenuItem>
         </NavigationMenuList>
