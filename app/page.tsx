@@ -8,7 +8,7 @@ import { properties } from "@/lib/placeholder-data";
 
 export default function Home() {
   return (
-    <main className="pt-20">
+    <main >
       {/* hero */}
       <section
         className="h-screen max-w-screen flex items-center text-white bg-center bg-cover bg-blend-overlay bg-black/50"
