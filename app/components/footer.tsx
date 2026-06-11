@@ -47,7 +47,7 @@ export const Footer = () => {
         </div>
       </div>
       <hr className=" border-t border-slate-600 mb-10" />
-      <p className="text-center">© 2026 Luiz Henrique Imóveis. Todos os direitos reservados. CRECI 16.478</p>
+      <p className="text-center">© {new Date().getFullYear()} Luiz Henrique Imóveis. Todos os direitos reservados. CRECI 16.478</p>
     </footer>
   );
 };
