@@ -40,7 +40,7 @@ export default function Contact() {
             Estamos prontos para ajudar você a encontrar o imóvel ideal
           </p>
         </div>
-        <div className="absolute bottom-14 left-0 right-0 flex flex-wrap gap-4 justify-center">
+        <div className=" px-4 w-full absolute bottom-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
             {contactInfo.map((info) => (
                 <ContactCard
                     key={contactInfo.indexOf(info)}
@@ -48,10 +48,20 @@ export default function Contact() {
                     title={info.title}
                     info={info.info}
                     description={info.description}
+                    className="w-75 mx-auto"
+                    
                 />
             ))}
            
           </div>
+      </section>
+      <section className="h-screen p-6 flex">
+            <div className="w-1/2">
+                <h1 className="text-4xl font-semibold">Envie Sua Mensagem</h1>
+            </div>
+            <div className="w-1/2">
+                <h1 className="text-4xl font-semibold">Localização</h1>
+            </div>
       </section>
     </>
   );

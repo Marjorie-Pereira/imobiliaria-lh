@@ -18,7 +18,7 @@ export default function ContactCard({
   return (
     <Card
       size="sm"
-      className={` p-4 max-w-80 shadow-2xl ${className}`}
+      className={` max-w-80 p-4 shadow-2xl ${className}`}
     >
       <CardContent className="py-6"> 
         <div className="bg-blue-100 rounded-full w-fit p-4 mb-6">
