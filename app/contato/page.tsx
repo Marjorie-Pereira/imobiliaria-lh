@@ -17,12 +17,14 @@ import {
 } from "@/components/ui/field";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function Contact() {
   const contactInfo = [
     {
       title: "Telefone",
-      info: ["(11) 9999-9999", "(11) 3333-3333"],
+      info: ["(51) 3621-1690", "(51) 9 8109-3047"],
       description: "Ligue para falar com nossos consultores",
       Icon: Phone,
     },
@@ -34,7 +36,7 @@ export default function Contact() {
     },
     {
       title: "Endereço",
-      info: ["Rua das Flores, 123 - Centro, São Paulo - SP"],
+      info: ["Av. Paraguassu, 3945, Capão Novo, Capão da Canoa/RS"],
       description: "Visite nosso escritório para atendimento presencial",
       Icon: MapPin,
     },
@@ -87,11 +89,22 @@ export default function Contact() {
 
             <form className="space-y-6">
               <Field>
-                <Input name="name" required placeholder="Nome Completo" className="py-6" />
+                <FieldLabel className="block text-sm mb-2 text-gray-700">
+                  Nome
+                </FieldLabel>
+                <Input
+                  name="name"
+                  required
+                  placeholder="Nome Completo"
+                  className="py-6"
+                />
               </Field>
 
               <FieldGroup className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Field>
+                  <FieldLabel className="block text-sm mb-2 text-gray-700">
+                    Email
+                  </FieldLabel>
                   <Input
                     name="email"
                     placeholder="Email"
@@ -101,7 +114,18 @@ export default function Contact() {
                   />
                 </Field>
                 <Field>
-                  <Input name="phone" type="number" required placeholder="Telefone" className="py-6"/>
+                  <FieldLabel className="block text-sm mb-2 text-gray-700">
+                    Telefone
+                  </FieldLabel>
+                  <Input
+                    name="phone"
+                    pattern="^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$
+"
+                    type="tel"
+                    required
+                    placeholder="Telefone"
+                    className="py-6"
+                  />
                 </Field>
               </FieldGroup>
 
@@ -110,7 +134,7 @@ export default function Contact() {
                   <FieldLabel className="block text-sm mb-2 text-gray-700">
                     Assunto
                   </FieldLabel>
-                  <Select>
+                  <Select required={true}>
                     <SelectTrigger className="w-full px-4 py-6 border  border-gray-300 rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
                       <SelectValue placeholder="Selecione um Assunto" />
                     </SelectTrigger>
@@ -182,13 +206,13 @@ export default function Contact() {
                 <p className="text-gray-600 mb-4">
                   Ligue agora e fale diretamente com um consultor especializado
                 </p>
-                <a
-                  href="tel:+551199999999"
+                <Link
+                  href="tel:+555136211690"
                   className="text-blue-600 hover:text-blue-700 inline-flex items-center gap-2"
                 >
-                  (11) 9999-9999
+                  (51) 3621-1690
                   <Phone className="w-4 h-4" />
-                </a>
+                </Link>
               </div>
 
               <div className="bg-green-50 p-6 rounded-lg">
@@ -199,15 +223,15 @@ export default function Contact() {
                 <p className="text-gray-600 mb-4">
                   Converse conosco pelo WhatsApp para atendimento instantâneo
                 </p>
-                <a
-                  href="https://wa.me/5511999999999"
+                <Link
+                  href="https://wa.me/5551981093047"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-green-600 hover:text-green-700 inline-flex items-center gap-2"
                 >
                   Iniciar conversa
                   <MessageSquare className="w-4 h-4" />
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -227,47 +251,63 @@ export default function Contact() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-xl mb-3 text-gray-900">
-                Como faço para agendar uma visita?
-              </h3>
-              <p className="text-gray-600">
-                Você pode agendar uma visita através do formulário acima,
-                WhatsApp, telefone ou diretamente no anúncio do imóvel de seu
-                interesse.
-              </p>
-            </div>
+            <Card className="shadow-md ">
+              <CardHeader>
+                <CardTitle className="text-xl font-normal text-gray-900">
+                  Como faço para agendar uma visita?
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600 text-base">
+                  Você pode agendar uma visita através do formulário acima,
+                  WhatsApp, telefone ou diretamente no anúncio do imóvel de seu
+                  interesse.
+                </p>
+              </CardContent>
+            </Card>
 
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-xl mb-3 text-gray-900">
-                Vocês cobram taxa de avaliação?
-              </h3>
-              <p className="text-gray-600">
-                Não! A avaliação do seu imóvel é totalmente gratuita e sem
-                compromisso. Entre em contato para agendar.
-              </p>
-            </div>
+            <Card className="shadow-md ">
+              <CardHeader>
+                <CardTitle className="text-xl font-normal text-gray-900">
+                  Vocês cobram taxa de avaliação?
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600 text-base">
+                  Não! A avaliação do seu imóvel é totalmente gratuita e sem
+                  compromisso. Entre em contato para agendar.
+                </p>
+              </CardContent>
+            </Card>
 
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-xl mb-3 text-gray-900">
-                Quanto tempo leva para vender um imóvel?
-              </h3>
-              <p className="text-gray-600">
-                O tempo varia conforme o tipo de imóvel, localização e valor.
-                Nossa equipe trabalha para vender seu imóvel no menor tempo
-                possível.
-              </p>
-            </div>
+            <Card className="shadow-md ">
+              <CardHeader>
+                <CardTitle className="text-xl font-normal text-gray-900">
+                  Quanto tempo leva para vender um imóvel?
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600 text-base">
+                  O tempo varia conforme o tipo de imóvel, localização e valor.
+                  Nossa equipe trabalha para vender seu imóvel no menor tempo
+                  possível.
+                </p>
+              </CardContent>
+            </Card>
 
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-xl mb-3 text-gray-900">
-                Aceitam imóvel como parte do pagamento?
-              </h3>
-              <p className="text-gray-600">
-                Sim! Trabalhamos com permuta de imóveis. Entre em contato para
-                avaliarmos as possibilidades.
-              </p>
-            </div>
+            <Card className="shadow-md ">
+              <CardHeader>
+                <CardTitle className="text-xl font-normal text-gray-900">
+                  Aceitam imóvel como parte do pagamento?
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600 text-base">
+                  Sim! Trabalhamos com permuta de imóveis. Entre em contato para
+                  avaliarmos as possibilidades.
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
