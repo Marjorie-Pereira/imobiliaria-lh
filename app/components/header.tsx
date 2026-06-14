@@ -13,11 +13,11 @@ import Link from "next/link";
 import { Heart } from "lucide-react";
 export const Header = () => {
   return (
-    <header className="py-2 px-10 flex items-center justify-between fixed top-0 right-0 left-0 z-10 h-20 bg-white/90 backdrop-blur-md">
-     <Link href={'/'}>
-     <Image src="/lhimoveis.png" alt="Logo" width={150} height={50} />
-     </Link>
-      
+    <header className="py-2 px-10 flex items-center justify-between fixed top-0 right-0 left-0 z-20 h-20 bg-white/90 backdrop-blur-md">
+      <Link href={"/"}>
+        <Image src="/lhimoveis.png" alt="Logo" width={150} height={50} />
+      </Link>
+
       <NavigationMenu className="hidden md:block">
         <NavigationMenuList>
           <NavigationMenuItem>
@@ -76,7 +76,7 @@ export const Header = () => {
               asChild
               className={navigationMenuTriggerStyle() + " text-md font-normal"}
             >
-              <Link href="/docs">Sobre Nós</Link>
+              <Link href="/sobre">Sobre Nós</Link>
             </NavigationMenuLink>
           </NavigationMenuItem>
           <NavigationMenuItem>
@@ -90,8 +90,10 @@ export const Header = () => {
         </NavigationMenuList>
       </NavigationMenu>
       <div className="flex items-center gap-4">
-        <Heart className="stroke-red-600 hover:fill-red-600 cursor-pointer"  />
-        <Button variant="outline">ENTRAR / CADASTRAR</Button>
+        <Heart className="stroke-red-600 hover:fill-red-600 cursor-pointer" />
+        <Link href={"/entrar-cadastrar"}>
+          <Button variant="outline">ENTRAR / CADASTRAR</Button>
+        </Link>
       </div>
     </header>
   );
